@@ -99,8 +99,8 @@ vector<unsigned long> optimal_case(unsigned long count)
     // We'll reserve enough memory to start with for a prime density of 50%.
     vector<unsigned long> l;
     l.reserve(count/2);
-    for (auto i = flags.begin(); i != flags.end(); ++i) {
-        if (i != flags.begin() && *i == true) {
+    for (auto i = flags.begin() + 1; i != flags.end(); ++i) {
+        if (*i == true) {
             l.push_back(distance(flags.begin(), i));
         }
     }
